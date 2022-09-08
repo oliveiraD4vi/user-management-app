@@ -4,9 +4,9 @@ import {
   Routes as RouteWrapper,
   BrowserRouter,
   Navigate,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-const Home = lazy(() => import('./screens/Home/home'));
+const Home = lazy(() => import("./screens/Home/home"));
 
 const Routes = () => {
   return (

@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
-require('dotenv').config();
+require("dotenv").config();
 
 const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.BASE_URL,
   headers: {
-    Accept: '*/*',
-    'Content-Type': 'application/json',
+    Accept: "*/*",
+    "Content-Type": "application/json",
   },
 });
 
 api.interceptors.request.use(async (config) => {
-  const auth = localStorage.getItem('GCUSER');
+  const auth = localStorage.getItem("GCUSER");
   if (auth) {
     const { token } = JSON.parse(auth);
     const tmpConfig = config;
