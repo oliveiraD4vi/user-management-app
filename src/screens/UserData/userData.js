@@ -1,4 +1,4 @@
-import UserDataComponent from "../../components/User/UserData/userData";
+import UserDataComponent from "../../components/Home/UserData/userData";
 
 const UserData = () => {
   return <UserDataComponent />;
