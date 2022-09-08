@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 const Home = lazy(() => import("./screens/Home/home"));
+const User = lazy(() => import("./screens/UserData/userData"));
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
       <BrowserRouter>
         <RouteWrapper>
           <Route path="/user/list" element={<Home />} />
+          <Route path="/user/data" element={<User />} />
 
           <Route path="*" element={<Navigate to="/user/list" />} />
         </RouteWrapper>
