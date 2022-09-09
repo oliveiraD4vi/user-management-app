@@ -6,7 +6,7 @@ import UserTable from "./UserTable/userTable";
 import Notification from "../../services/notification";
 import api from "../../services/api";
 
-const Home = () => {
+const List = () => {
   const [disabledPagination, setDisabledPagination] = useState(false);
   const [pagination, setPagination] = useState({});
   const [dataList, setDataList] = useState(null);
@@ -47,7 +47,7 @@ const Home = () => {
   }, []);
 
   return dataList ? (
-    <div className="home-container">
+    <div className="list-container">
       <UserTable
         dataList={dataList}
         getDataList={getDataList}
@@ -63,4 +63,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default List;

@@ -1,0 +1,25 @@
+.user-data-container .info > p,
+.user-data-container .info > span {
+  font-weight: bold;
+}
+
+.user-data-container .info > span {
+  margin-right: 5px;
+  color: #969696;
+}
+
+.user-data-container .info {
+  display: flex;
+}
+
+.user-data-card {
+  display: flex;
+}
+
+.user-data-card .grid {
+  margin: 0 15px;
+}
+
+.user-data-card .grid:first-child {
+  margin: 0 15px 0 0;
+}

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { PageHeader } from "antd";
 import { Loading } from "../../services/utils";
 
-import UserDataComponent from "../../components/Home/UserData/userData";
+import UserDataComponent from "../../components/User/UserData/userData";
 
 const UserData = () => {
   const [userData, setUserData] = useState(null);

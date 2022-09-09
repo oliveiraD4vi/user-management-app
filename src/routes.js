@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 
 const Layout = lazy(() => import("./screens/Layout/layout"));
-const Home = lazy(() => import("./screens/Home/home"));
-const User = lazy(() => import("./screens/UserData/userData"));
+const UserList = lazy(() => import("./screens/User/list"));
+const UserData = lazy(() => import("./screens/User/data"));
 
 const Routes = () => {
   return (
@@ -19,7 +19,7 @@ const Routes = () => {
             path="/user/list"
             element={
               <Layout>
-                <Home />
+                <UserList />
               </Layout>
             }
           />
@@ -27,7 +27,7 @@ const Routes = () => {
             path="/user/data"
             element={
               <Layout>
-                <User />
+                <UserData />
               </Layout>
             }
           />

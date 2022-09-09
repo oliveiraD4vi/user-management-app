@@ -1,9 +1,9 @@
 import { PageHeader } from "antd";
 import { useNavigate } from "react-router-dom";
 
-import HomeComponent from "../../components/Home/home";
+import ListComponent from "../../components/User/list";
 
-const Home = () => {
+const List = () => {
   const navigate = useNavigate();
 
   return (
@@ -13,9 +13,9 @@ const Home = () => {
         onBack={() => navigate("/home")}
         title="Listing"
       />
-      <HomeComponent />
+      <ListComponent />
     </div>
   );
 };
 
-export default Home;
+export default List;
