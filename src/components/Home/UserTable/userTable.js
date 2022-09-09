@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { ConfigProvider, Empty, Table, Pagination, Input } from "antd";
 
 import "./userTable.css";
+import moment from "moment";
 
 const UserTable = ({
   getDataList,
@@ -29,7 +30,7 @@ const UserTable = ({
 
   const columns = [
     {
-      title: "Nome",
+      title: "Name",
       dataIndex: "name",
       key: "name",
       width: "30vw",
@@ -38,6 +39,9 @@ const UserTable = ({
       title: "Registered Date",
       dataIndex: "registeredAt",
       key: "registered_at",
+      render: (value) => {
+        return moment(value).format("DD/MM/YYYY");
+      },
     },
     {
       title: "RG",
@@ -89,9 +93,10 @@ const UserTable = ({
           loading={loading}
         />
       </div>
-      <div className="table">
+      <div className="table-box">
         <ConfigProvider renderEmpty={customizeRenderEmpty}>
           <Table
+            className="table"
             dataSource={dataList}
             columns={columns}
             rowKey={(record) => record.externalId}

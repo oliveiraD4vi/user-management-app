@@ -20,7 +20,7 @@ const Header = () => {
           className="navigation-button"
           onClick={() => navigate("/user/list")}
         >
-          Users List
+          LISTING
         </Button>
       ),
       key: "list",
@@ -29,20 +29,9 @@ const Header = () => {
       label: (
         <Button
           className="navigation-button"
-          onClick={() => navigate("/user/register")}
-        >
-          Register
-        </Button>
-      ),
-      key: "register",
-    },
-    {
-      label: (
-        <Button
-          className="navigation-button"
           onClick={() => navigate("/user/consult")}
         >
-          Consultation
+          CONSULTATION
         </Button>
       ),
       key: "consult",
@@ -56,11 +45,15 @@ const Header = () => {
         <h1>Management</h1>
       </div>
       <Menu
+        className="header-menu"
         onClick={onClick}
         selectedKeys={[current]}
         mode="horizontal"
         items={items}
       />
+      <Button type="primary" onClick={() => navigate("/user/register")}>
+        Register
+      </Button>
     </div>
   );
 };

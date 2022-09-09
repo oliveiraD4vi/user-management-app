@@ -19,11 +19,11 @@
   color: #1890ff;
 }
 
-.ant-menu-horizontal,
-.navigation-button {
+.header-container .ant-menu-horizontal,
+.header-container .navigation-button {
   border: none;
 }
 
-.ant-btn {
+.header-container .header-menu .ant-btn {
   padding: 0;
 }
