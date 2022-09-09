@@ -1,6 +1,6 @@
 import { Button, Menu } from "antd";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import "./header.css";
 
@@ -8,6 +8,7 @@ const Header = () => {
   const [current, setCurrent] = useState("mail");
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const onClick = (e) => {
     setCurrent(e.key);
@@ -18,7 +19,13 @@ const Header = () => {
       label: (
         <Button
           className="navigation-button"
-          onClick={() => navigate("/user/list")}
+          onClick={() =>
+            navigate("/user/list", {
+              state: {
+                lastPath: location.pathname,
+              },
+            })
+          }
         >
           LISTING
         </Button>
@@ -29,7 +36,13 @@ const Header = () => {
       label: (
         <Button
           className="navigation-button"
-          onClick={() => navigate("/register")}
+          onClick={() =>
+            navigate("/register", {
+              state: {
+                lastPath: location.pathname,
+              },
+            })
+          }
         >
           REGISTER
         </Button>
@@ -40,7 +53,13 @@ const Header = () => {
       label: (
         <Button
           className="navigation-button"
-          onClick={() => navigate("/consult")}
+          onClick={() =>
+            navigate("/consult", {
+              state: {
+                lastPath: location.pathname,
+              },
+            })
+          }
         >
           CONSULTATION
         </Button>

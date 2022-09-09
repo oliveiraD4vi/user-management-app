@@ -32,6 +32,7 @@ const Register = () => {
       Notification("success", "User registered");
       navigate("/user/data", {
         state: {
+          lastPath: "/register",
           data,
         },
       });

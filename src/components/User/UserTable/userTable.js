@@ -23,6 +23,7 @@ const UserTable = ({
   const selectRow = (record) => {
     navigate("/user/data", {
       state: {
+        lastPath: "/user/list",
         data: record,
       },
     });

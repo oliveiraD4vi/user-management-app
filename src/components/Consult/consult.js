@@ -25,6 +25,7 @@ const Consult = () => {
 
       navigate("/user/data", {
         state: {
+          lastPath: "/consult",
           data,
         },
       });

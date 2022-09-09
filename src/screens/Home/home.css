@@ -29,3 +29,8 @@
 .home-bottom .back > .anticon {
   color: #e40000;
 }
+
+.information {
+  position: relative;
+  top: 45px;
+}

@@ -30,7 +30,11 @@ const UserData = () => {
     if (location.state && location.state.data) {
       setUserData(location.state.data);
     } else {
-      navigate("/");
+      navigate("/", {
+        state: {
+          lastPath: "/user/data",
+        },
+      });
     }
   }, []);
 
@@ -56,7 +60,11 @@ const UserData = () => {
       await api.delete(`/user?id=${userData.id}`);
 
       Notification("success", "User deleted");
-      navigate("/user/list");
+      navigate("/user/list", {
+        state: {
+          lastPath: "/user/data",
+        },
+      });
     } catch (error) {
       Notification("error", "Request not available");
     }
@@ -104,7 +112,13 @@ const UserData = () => {
       >
         <PageHeader
           className="site-page-header"
-          onBack={() => navigate("/user/list")}
+          onBack={() =>
+            navigate(location.state.lastPath, {
+              state: {
+                lastPath: "/user/data",
+              },
+            })
+          }
           title="User data"
         />
         <div>
