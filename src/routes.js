@@ -8,6 +8,7 @@ import {
 
 const Layout = lazy(() => import("./screens/Layout/layout"));
 const Consult = lazy(() => import("./screens/Consult/consult"));
+const Register = lazy(() => import("./screens/Register/register"));
 const UserList = lazy(() => import("./screens/User/list"));
 const UserData = lazy(() => import("./screens/User/data"));
 
@@ -37,6 +38,14 @@ const Routes = () => {
             element={
               <Layout>
                 <Consult />
+              </Layout>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <Layout>
+                <Register />
               </Layout>
             }
           />

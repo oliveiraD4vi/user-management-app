@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import { FieldNumberOutlined } from "@ant-design/icons";
 
 import Notification from "../../services/notification";
 import api from "../../services/api";
-
-import "./consult.css";
-import { FieldNumberOutlined } from "@ant-design/icons";
 
 const Consult = () => {
   const [loading, setLoading] = useState(false);
@@ -56,7 +54,7 @@ const Consult = () => {
               message: "This is not an valid CPF or RG",
             },
             {
-              pattern: /^[\d-]+$/,
+              pattern: /^[\d-.]+$/,
               message: "Numbers only",
             },
           ]}
