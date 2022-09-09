@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import api from "../../services/api";
 import Notification from "../../services/notification";
@@ -10,6 +11,8 @@ const Register = () => {
   const [loading, setLoading] = useState();
   const [disabled, setDisabled] = useState();
 
+  const navigate = useNavigate();
+
   const handleSubmit = async ({ name, cpf, rg, motherName, bornAt }) => {
     setLoading(true);
     setDisabled(true);
@@ -17,7 +20,7 @@ const Register = () => {
     const registeredAt = Date.now();
 
     try {
-      await api.post(`/user`, {
+      const { data } = await api.post(`/user`, {
         name,
         cpf,
         rg,
@@ -27,6 +30,11 @@ const Register = () => {
       });
 
       Notification("success", "User registered");
+      navigate("/user/data", {
+        state: {
+          data,
+        },
+      });
     } catch (error) {
       setLoading(false);
       setDisabled(false);

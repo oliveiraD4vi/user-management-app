@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Form, Input, Button, DatePicker } from "antd";
 import {
   FieldNumberOutlined,
@@ -6,14 +7,27 @@ import {
 } from "@ant-design/icons";
 
 import "./userForm.css";
+import moment from "moment";
 
-const UserForm = ({ setValues, disabled, loading }) => {
+const UserForm = ({ data, setValues, disabled, loading }) => {
   const [form] = Form.useForm();
   const dateFormat = "DD/MM/YYYY";
 
   const handleSubmit = (values) => {
     setValues(values);
   };
+
+  useEffect(() => {
+    if (data) {
+      form.setFieldsValue({
+        name: data.name,
+        cpf: data.cpf,
+        rg: data.rg,
+        motherName: data.motherName,
+        bornAt: moment(data.bornAt),
+      });
+    }
+  }, [data]);
 
   return (
     <div className="user-form-container">

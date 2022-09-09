@@ -15,6 +15,9 @@ import UserForm from "../../components/User/UserForm/userForm";
 import UserDataComponent from "../../components/User/UserData/userData";
 
 const UserData = () => {
+  const [values, setValues] = useState(null);
+  const [loading, setLoading] = useState();
+  const [disabled, setDisabled] = useState();
   const [userData, setUserData] = useState(null);
   const [edit, setEdit] = useState(false);
 
@@ -30,6 +33,10 @@ const UserData = () => {
       navigate("/");
     }
   }, []);
+
+  useEffect(() => {
+    if (values) handleSubmit(values);
+  }, [values]);
 
   const showDeleteConfirm = () => {
     confirm({
@@ -52,6 +59,36 @@ const UserData = () => {
       navigate("/user/list");
     } catch (error) {
       Notification("error", "Request not available");
+    }
+  };
+
+  const handleSubmit = async ({ name, cpf, rg, motherName, bornAt }) => {
+    setLoading(true);
+    setDisabled(true);
+
+    const registeredAt = userData.registeredAt;
+
+    try {
+      const { data } = await api.put(`/user`, {
+        id: userData.id,
+        name,
+        cpf,
+        rg,
+        motherName,
+        bornAt,
+        registeredAt,
+      });
+
+      setUserData(data);
+      setEdit(false);
+      setLoading(false);
+      setDisabled(false);
+      Notification("success", "User updated");
+    } catch (error) {
+      setLoading(false);
+      setDisabled(false);
+
+      Notification("error", "Bad request or user not found");
     }
   };
 
@@ -91,7 +128,16 @@ const UserData = () => {
           )}
         </div>
       </div>
-      {edit ? <UserForm /> : <UserDataComponent userData={userData} />}
+      {edit ? (
+        <UserForm
+          data={userData}
+          setValues={setValues}
+          loading={loading}
+          disabled={disabled}
+        />
+      ) : (
+        <UserDataComponent userData={userData} />
+      )}
     </div>
   ) : (
     <Loading />
