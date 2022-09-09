@@ -1,5 +1,5 @@
-const UserData = () => {
-  return <div className="user-data-container">user-data</div>;
+const UserData = ({ userData }) => {
+  return <div className="user-data-container">{userData.name}</div>;
 };
 
 export default UserData;
