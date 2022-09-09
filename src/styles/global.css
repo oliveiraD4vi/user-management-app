@@ -20,3 +20,7 @@ body {
 .site-page-header .ant-page-header-heading-title {
   font-size: 28px;
 }
+
+.ant-btn {
+  font-weight: bold;
+}

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 const Layout = lazy(() => import("./screens/Layout/layout"));
+const Home = lazy(() => import("./screens/Home/home"));
 const Consult = lazy(() => import("./screens/Consult/consult"));
 const Register = lazy(() => import("./screens/Register/register"));
 const UserList = lazy(() => import("./screens/User/list"));
@@ -17,6 +18,14 @@ const Routes = () => {
     <Suspense>
       <BrowserRouter>
         <RouteWrapper>
+          <Route
+            path="/home"
+            element={
+              <Layout>
+                <Home />
+              </Layout>
+            }
+          />
           <Route
             path="/user/list"
             element={
@@ -50,7 +59,7 @@ const Routes = () => {
             }
           />
 
-          <Route path="*" element={<Navigate to="/user/list" />} />
+          <Route path="*" element={<Navigate to="/home" />} />
         </RouteWrapper>
       </BrowserRouter>
     </Suspense>
