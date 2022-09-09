@@ -29,6 +29,17 @@ const Header = () => {
       label: (
         <Button
           className="navigation-button"
+          onClick={() => navigate("/user/register")}
+        >
+          REGISTER
+        </Button>
+      ),
+      key: "register",
+    },
+    {
+      label: (
+        <Button
+          className="navigation-button"
           onClick={() => navigate("/user/consult")}
         >
           CONSULTATION
@@ -40,10 +51,10 @@ const Header = () => {
 
   return (
     <div className="header-container">
-      <div className="brand">
+      <a href="/" className="brand">
         <h1>User</h1>
         <h1>Management</h1>
-      </div>
+      </a>
       <Menu
         className="header-menu"
         onClick={onClick}
@@ -51,9 +62,6 @@ const Header = () => {
         mode="horizontal"
         items={items}
       />
-      <Button type="primary" onClick={() => navigate("/user/register")}>
-        Register
-      </Button>
     </div>
   );
 };

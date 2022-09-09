@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 10rem;
+  padding: 2rem 12rem;
   border-bottom: 1px solid #1890ff;
   box-shadow: 0px 2px 10px 5px rgba(0, 8, 20, 0.05);
 }
@@ -19,11 +19,12 @@
   color: #1890ff;
 }
 
+.ant-btn,
 .header-container .ant-menu-horizontal,
 .header-container .navigation-button {
   border: none;
 }
 
 .header-container .header-menu .ant-btn {
-  padding: 0;
+  padding: 0 5px;
 }

@@ -6,7 +6,7 @@ const AUTH = "GCUSER";
 export const Loading = () => {
   return (
     <Spin
-      tip="Wait or try to reload"
+      tip="Try to reload"
       indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />}
     />
   );
