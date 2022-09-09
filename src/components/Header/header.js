@@ -40,7 +40,7 @@ const Header = () => {
       label: (
         <Button
           className="navigation-button"
-          onClick={() => navigate("/user/consult")}
+          onClick={() => navigate("/consult")}
         >
           CONSULTATION
         </Button>
