@@ -1,4 +1,16 @@
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+
 const AUTH = "GCUSER";
+
+export const Loading = () => {
+  return (
+    <Spin
+      tip="Try to reload"
+      indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />}
+    />
+  );
+};
 
 export const auth = {
   login(authData) {

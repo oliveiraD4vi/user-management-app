@@ -1,0 +1,7 @@
+.table-container .ant-table-row:hover {
+  cursor: pointer;
+}
+
+.table-container .table-box .table {
+  margin: 20px 0;
+}

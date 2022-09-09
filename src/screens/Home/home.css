@@ -1,0 +1,40 @@
+.home-container {
+  display: flex;
+}
+
+.home-container .management-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-container .management-image > img {
+  width: 500px;
+}
+
+.home-container .management-image > a {
+  align-self: center;
+  font-size: 8px;
+  position: relative;
+  top: -50px;
+}
+
+.home-bottom .anticon {
+  font-size: 32px;
+}
+
+.home-bottom .anticon:first-child {
+  margin-right: 10px;
+}
+
+.home-bottom .back > .anticon {
+  color: #e40000;
+}
+
+.information {
+  position: relative;
+  top: 45px;
+}
+
+.attribution {
+  margin: 20px 0;
+}
