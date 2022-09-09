@@ -49,6 +49,17 @@ const Home = () => {
             </a>
           </Tooltip>
         </div>
+
+        <div className="attribution">
+          created by
+          <a
+            href="https://github.com/oliveiraD4vi"
+            target="_blank"
+            rel="noreferrer"
+          >
+            &nbsp;oliveiraD4vi&nbsp;
+          </a>
+        </div>
       </div>
     </div>
   );

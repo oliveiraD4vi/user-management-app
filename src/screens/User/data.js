@@ -30,7 +30,7 @@ const UserData = () => {
     if (location.state && location.state.data) {
       setUserData(location.state.data);
     } else {
-      navigate("/", {
+      navigate("/user/list", {
         state: {
           lastPath: "/user/data",
         },

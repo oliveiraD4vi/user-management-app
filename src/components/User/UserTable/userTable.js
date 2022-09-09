@@ -3,6 +3,7 @@ import { ConfigProvider, Empty, Table, Pagination, Input } from "antd";
 
 import "./userTable.css";
 import moment from "moment";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 const UserTable = ({
   getDataList,
@@ -53,6 +54,10 @@ const UserTable = ({
       title: "CPF",
       key: "cpf",
       dataIndex: "cpf",
+    },
+    {
+      key: "action",
+      render: () => <ArrowRightOutlined />,
     },
   ];
 
@@ -119,14 +124,14 @@ const UserTable = ({
           />
         </ConfigProvider>
         <Pagination
-          locale={{ items_per_page: ` /  página` }}
+          locale={{ items_per_page: ` /  page` }}
           showSizeChanger
           current={pagination.page}
           defaultPageSize={pagination.size}
           total={pagination.totalCount}
           onChange={onChangePagination}
           disabled={disabledPagination}
-          pageSizeOptions={["10", "20", "30"]}
+          pageSizeOptions={["5", "10", "15", "20", "30"]}
         />
       </div>
     </div>

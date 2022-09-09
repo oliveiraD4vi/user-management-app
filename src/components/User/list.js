@@ -16,25 +16,29 @@ const List = () => {
     setLoading(true);
     setDisabledPagination(true);
 
-    const params = {
-      page,
-      size,
-    };
-
-    if (search) params.name = search;
-
     try {
-      const response = await api.get("/list");
+      const response = await api.get(`/list?page=${page}&size=${size}`);
       const { data } = response;
 
       setPagination({
-        totalCount: data.length,
+        totalCount: data.totalElements,
         page,
         size,
         search,
       });
 
-      setDataList(data);
+      if (search) {
+        const list = [];
+        data.content.forEach((item) => {
+          if (item.name.toLowerCase().includes(search.toLowerCase())) {
+            list.push(item);
+          }
+        });
+        setDataList(list);
+      } else {
+        setDataList(data.content);
+      }
+
       setLoading(false);
       setDisabledPagination(false);
     } catch ({ response }) {
@@ -43,7 +47,7 @@ const List = () => {
   };
 
   useEffect(() => {
-    getDataList();
+    getDataList(1, 5);
   }, []);
 
   return dataList ? (
