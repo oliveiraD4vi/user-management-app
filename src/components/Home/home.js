@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Loading } from "../../services/utils";
 
-import UserTable from "./UserTable/UserTable";
+import UserTable from "./UserTable/userTable";
 
 import Notification from "../../services/notification";
 import api from "../../services/api";

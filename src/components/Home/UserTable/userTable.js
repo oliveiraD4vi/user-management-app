@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { ConfigProvider, Empty, Table, Pagination, Input } from "antd";
 
+import "./userTable.css";
+
 const UserTable = ({
   getDataList,
   dataList,

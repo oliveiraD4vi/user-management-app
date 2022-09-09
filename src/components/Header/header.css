@@ -1,0 +1,29 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 10rem;
+  border-bottom: 1px solid #1890ff;
+  box-shadow: 0px 2px 10px 5px rgba(0, 8, 20, 0.05);
+}
+
+.header-container > .brand {
+  display: flex;
+}
+
+.header-container > .brand > h1 {
+  font-weight: bold;
+}
+
+.header-container > .brand > h1:last-child {
+  color: #1890ff;
+}
+
+.ant-menu-horizontal,
+.navigation-button {
+  border: none;
+}
+
+.ant-btn {
+  padding: 0;
+}
